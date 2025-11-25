@@ -14,3 +14,36 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <h2>sum</h2>
+  <form>
+    <input type="text" placeholder="enter account number" class="form-control" />
+    <input type="text" placeholder="enteriifc code" class="form-control" />
+    <button>Transfer Money</button>
+  </form>
+  <button (click)="sum(10, 20)">calculate</button>
+</div>
+
+<div class="container">
+  <h2>Count {{ count }}</h2>
+  <div>
+    <button (click)="handleCount('plus')">Increment</button>
+    <button (click)="handleCount('minus')">Decrement</button>
+    <button (click)="handleCount('reset')">Reset</button>
+  </div>
+</div>
+
+<div class="container">
+  <button class="btn" name="register" (click)="handleEvent($event)">Click me</button>
+  <div class="container bg-primary" (mouseenter)="handleEvent($event)">
+    <p (mouseleave)="handleEvent($event)">abcd</p>
+  </div>
+</div>
+
+<input
+  type="text"
+  placeholder="enter"
+  (focus)="handleEvent($event)"
+  (blur)="handleEvent($event)"
+  (input)="handleEvent($event)"
+/>
