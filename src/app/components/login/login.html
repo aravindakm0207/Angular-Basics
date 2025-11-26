@@ -47,3 +47,40 @@
   (blur)="handleEvent($event)"
   (input)="handleEvent($event)"
 />
+
+<div class="container">
+  @for(user of users;track user){
+  <h2>{{ user }}</h2>
+  }
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>account</th>
+        <th>amount</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (ele of bankaccounts; track ele) {
+      <tr>
+        <td>{{ ele.name }}</td>
+        <td>{{ ele.account }}</td>
+        <td>{{ ele.amount }}</td>
+        <button (click)="handleDeposit(ele)">deposit</button>
+        <button (click)="handlewithdraw()">withdraw</button>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+@if (depositForm) {
+<div>
+  <form>
+    <input type="text" placeholder="enter amount" />
+    <button type="button">deposit</button>
+    <button type="button" (click)="depositForm = false">cancel</button>
+  </form>
+</div>
+}

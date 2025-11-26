@@ -36,4 +36,24 @@ export class Login {
     console.log('value', (event.target as HTMLInputElement).value);
     console.log('function called', (event.target as Element).classList);
   }
+
+  users = ['ram', 'sham', 'aravinda'];
+  bankaccounts = [
+    { name: 'aravinda', account: 'savings', amount: 10000 },
+    { name: 'suresh', account: 'savings', amount: 20000 },
+  ];
+
+  depositForm = false;
+  selectAccount: any = null;
+  amount: number = 0;
+
+  handleDeposit(account: any) {
+    this.depositForm = true;
+    this.selectAccount = account;
+    this.amount = 0;
+  }
+  deposit() {
+    this.amount += this.amount;
+  }
+  handlewithdraw() {}
 }
