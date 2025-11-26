@@ -49,6 +49,7 @@ export class Login {
 
   handleDeposit(account: any) {
     this.depositForm = true;
+
     this.selectAccount = account;
     this.amount = 0;
   }

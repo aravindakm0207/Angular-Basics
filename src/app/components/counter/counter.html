@@ -1,0 +1,24 @@
+<p>counter works!</p>
+<p>sum {{ count() }}</p>
+<button (click)="incre()">inc</button>
+<p>{{ data() }}</p>
+<button (click)="updatesignal()">update</button>
+<div class="container">
+  <div class="row bg-success">
+    <h2>computed signals update</h2>
+    <button (click)="showValue()">Show Value</button>
+  </div>
+</div>
+
+@if(displayForm()) {
+<!-- notice the () -->
+<div class="container text-center m-4">
+  <button (click)="showForm()">show form</button>
+
+  <form>
+    <input type="text" placeholder="enter name" /><br />
+    <input type="text" placeholder="enter name" /><br />
+    <button>submit</button>
+  </form>
+</div>
+}

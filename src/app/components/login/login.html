@@ -56,6 +56,7 @@
   <table border="1">
     <thead>
       <tr>
+        <th></th>
         <th>name</th>
         <th>account</th>
         <th>amount</th>
@@ -63,8 +64,9 @@
     </thead>
 
     <tbody>
-      @for (ele of bankaccounts; track ele) {
+      @for (ele of bankaccounts; track ele; let id=$index) {
       <tr>
+        <span>{{ id + 1 }}</span>
         <td>{{ ele.name }}</td>
         <td>{{ ele.account }}</td>
         <td>{{ ele.amount }}</td>
