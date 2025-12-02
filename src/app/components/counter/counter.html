@@ -22,3 +22,22 @@
   </form>
 </div>
 }
+
+<h1 *ngIf="show">HEADING</h1>
+
+<ul>
+  <li *ngFor="let x of students">
+    {{ x }}
+  </li>
+</ul>
+<!-- 
+<div *ngIf="login; else elseBlock">
+  <a href="">logout</a>
+</div>
+
+<ng-template #elseBlock></ng-template> -->
+<div class="container">
+  <h2>weather app</h2>
+  <p>{{ temperature }}</p>
+  <input [value]="temperature" disabled />
+</div>

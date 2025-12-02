@@ -1,14 +1,18 @@
+import { NgIf } from '@angular/common';
 import { Component, effect, signal, computed } from '@angular/core';
-
+import { NgFor } from '@angular/common';
 @Component({
   selector: 'app-counter',
-  imports: [],
+  imports: [NgIf, NgFor],
   templateUrl: './counter.html',
   styleUrl: './counter.css',
 })
 export class Counter {
+  show = false;
   count = signal(0);
   displayForm = signal(false);
+
+  temperature: number = 0;
 
   constructor() {
     effect(() => {
@@ -41,5 +45,18 @@ export class Counter {
   showValue() {
     this.x.set(200);
     console.log(this.z());
+  }
+
+  students = ['anil', 'ram', 'abc'];
+  users = [
+    { name: 'aravind', age: 24, email: 'abc@gmail.com' },
+    { name: 'aravind', age: 24, email: 'abc@gmail.com' },
+    { name: 'aravind', age: 24, email: 'abc@gmail.com' },
+  ];
+  ngOnInit() {
+    this.getTemperature();
+  }
+  getTemperature() {
+    this.temperature = 25;
   }
 }

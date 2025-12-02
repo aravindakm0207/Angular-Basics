@@ -1,0 +1,59 @@
+<p>bank works!</p>
+
+<div class="container">
+  <h2>Bank app</h2>
+
+  <p>{{ balance }}</p>
+  <!-- interpolation one way ts to html -->
+  <button (click)="deposit()">deposit</button>
+  <!-- event binding ,Sends data from HTML → TS -->
+  <button (click)="withdraw()">withdraw</button><br />
+  <div *ngFor="let t of transactions">
+    <p>{{ t }}</p>
+  </div>
+  <br /><br />
+  <h2>one way binding</h2>
+  <p>
+    Data flows one way: TS to-- HTML The input displays the value of amount,User typing does NOT
+    update the amount variable ,If amount changes in TypeScript, the input updates,But if the user
+    types in the input, nothing happens
+  </p>
+  <input [value]="amount" />
+  <!-- property binding one way ts to html,Sends data to the DOM property HTML updates when TS changes -->
+  <button>send amount via form</button>
+
+  <br /><br />
+  <h2>two way binding</h2>
+  <p>
+    Data flows both ways: TS ↔ HTML,Input shows the value of amount,User typing updates the TS
+    variable,TS updates reflect back to the input
+  </p>
+
+  <input type="number" [(ngModel)]="amount" placeholder="Enter amount" />
+  <button (click)="depositA()">send</button>
+  <button (click)="withdrawA()">take amount</button><br /><br />
+
+  <h2>User 1</h2>
+  <p>Balance: {{ user1Balance }}</p>
+
+  <div *ngFor="let t of user1Transactions">
+    {{ t }}
+  </div>
+
+  <hr />
+
+  <h2>User 2</h2>
+  <p>Balance: {{ user2Balance }}</p>
+
+  <div *ngFor="let t of user2Transactions">
+    {{ t }}
+  </div>
+
+  <hr />
+
+  Amount:
+  <input type="number" [(ngModel)]="amount" />
+
+  <button (click)="depositFromUser1ToUser2()">User1 to User2</button>
+  <button (click)="depositFromUser2ToUser1()">User2 to User1</button>
+</div>
